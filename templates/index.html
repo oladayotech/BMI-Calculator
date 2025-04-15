@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI Calculator Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f0fcfa;
+      color: #0f172a;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #ffffff 60%, #e6fcf9 40%);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #475569;
+      margin: 0.3rem 0;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      padding: 0.8rem 1.6rem;
+      background-color: #b9fbc0;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0f172a;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #7ef9c3;
+    }
+
+    .btn svg {
+      margin-left: 0.5rem;
+      width: 24px;
+      height: 24px;
+      stroke: #0f172a;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    a {
+      color: #94a3b8;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>BMI Calculator</h1>
+    <p>Track your health, not your worth.</p>
+    <p>Your BMI doesn’t define you.</p>
+
+    <button class="btn" onclick="window.location.href='bmi'">
+      Calculate BMI
+      <!-- Human Icon SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M18 20l-3.5-4.5M6 20l3.5-4.5m0 0L12 13l2.5 2.5M9.5 15.5v-2.25m5 0V15.5m-2.5 2.25V21M12 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" />
+      </svg>
+    </button>
+  </div>
+
+  <footer>
+    &copy; 2025 Built with 💚 by Abdulquahaar |
+    <a href="#">Privacy</a> |
+    <a href="#">Contact</a>
+  </footer>
+
+</body>
+</html>
