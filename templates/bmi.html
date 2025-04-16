@@ -59,7 +59,9 @@
     }
 
     footer {
-      margin-top: 50px;
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
       text-align: center;
       font-size: 14px;
       color: #94a3b8;
@@ -114,44 +116,54 @@
   </div>
 
   <footer>
-    Powered by <a href="https://github.com/oladayotech" target="_blank">Oladayotech</a>
+    &copy; 2025 Built with 💚 by Abdulquahaar |
+    <a href="#">Privacy</a> |
+    <a href="https://github.com/oladayotech">Contact</a>
   </footer>
 
   <script>
     document.getElementById("bmiForm").addEventListener("submit", function(event) {
-      event.preventDefault();
+  event.preventDefault();
 
-      let weight = parseFloat(document.getElementById("weight").value);
-      let height = parseFloat(document.getElementById("height").value);
-      const weightUnit = document.getElementById("weightUnit").value;
-      const heightUnit = document.getElementById("heightUnit").value;
+  let weight = parseFloat(document.getElementById("weight").value);
+  let height = parseFloat(document.getElementById("height").value);
+  const weightUnit = document.getElementById("weightUnit").value;
+  const heightUnit = document.getElementById("heightUnit").value;
 
-      if (weightUnit === "lbs") {
-        weight *= 0.453592;
-      }
+  if (weightUnit === "lbs") {
+    weight *= 0.453592;
+  }
 
-      if (heightUnit === "in") {
-        height *= 2.54;
-      }
+  if (heightUnit === "in") {
+    height *= 2.54;
+  }
 
-      height = height / 100;
-      const bmi = weight / (height * height);
-      const roundedBMI = bmi.toFixed(1);
+  // 🛑 Validate weight and height before calculating BMI
+  if (weight < 20 || weight > 300 || height < 100 || height > 250) {
+    document.getElementById("bmiResult").textContent = `Please enter realistic values.`;
+    document.getElementById("bmiInterpretation").textContent = "";
+    return;
+  }
 
-      let interpretation = "";
-      if (bmi < 18.5) {
-        interpretation = "Underweight";
-      } else if (bmi < 25) {
-        interpretation = "Normal weight";
-      } else if (bmi < 30) {
-        interpretation = "Overweight";
-      } else {
-        interpretation = "Obese";
-      }
+  height = height / 100;
+  const bmi = weight / (height * height);
+  const roundedBMI = bmi.toFixed(1);
 
-      document.getElementById("bmiResult").textContent = `Your BMI is ${roundedBMI}`;
-      document.getElementById("bmiInterpretation").textContent = interpretation;
-    });
+  let interpretation = "";
+  if (bmi < 18.5) {
+    interpretation = "Underweight";
+  } else if (bmi < 25) {
+    interpretation = "Normal weight";
+  } else if (bmi < 30) {
+    interpretation = "Overweight";
+  } else {
+    interpretation = "Obese";
+  }
+
+  document.getElementById("bmiResult").textContent = `Your BMI is ${roundedBMI}`;
+  document.getElementById("bmiInterpretation").textContent = interpretation;
+});
+
   </script>
 
 </body>
